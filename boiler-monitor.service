@@ -1,0 +1,12 @@
+[Unit]
+Description=Boiler monitor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/pi/boiler-monitor/bin/python boilerdaemon.py --port /dev/ttyUSB0 --influxdb-hostname 127.0.0.1
+WorkingDirectory=/home/pi/boiler-monitor
+
+[Install]
+WantedBy=multi-user.target

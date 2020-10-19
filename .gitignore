@@ -1,0 +1,5 @@
+__pycache__
+venv
+boiler_oil_meter_sketch/config.h
+.idea
+deploy.sh

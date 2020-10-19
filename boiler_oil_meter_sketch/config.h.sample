@@ -1,0 +1,13 @@
+#include <stdint.h>
+
+const uint32_t CURRENT_TRANSFORMER_PIN=33;
+const uint32_t TEMP_SENSOR_PIN=26;
+
+const char* SSID = "<your ssid>";
+const char* PASSWORD = "<your password>";
+
+const char* NTP_SERVER = "pool.ntp.org";
+const uint32_t NTP_GMT_OFFSET = 7200;
+const uint32_t NTP_DST_OFFSET = 3600;
+
+const float BOILER_L_PER_HOUR = 2.08175f;
