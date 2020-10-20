@@ -27,6 +27,10 @@ influential variable I wanted to see.
 The WiFi in this project is a bit under-utilized, as the RaspberryPi running influx/grafana was
 quite close, so it's only used for time sync for resetting the daily/monthly counters.
 
+When building the sketch, move config.h.sample to config.h and update with your own
+wireless network information. Sorry, that is the quickest way to make sure I don't commit
+my passwords.
+
 
 Software side
 ------------------
