@@ -7,6 +7,8 @@ Wants=network-online.target
 Type=simple
 ExecStart=/home/pi/boiler-monitor/bin/python boilerdaemon.py --port /dev/ttyUSB0 --influxdb-hostname 127.0.0.1
 WorkingDirectory=/home/pi/boiler-monitor
+Restart=always
+RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
