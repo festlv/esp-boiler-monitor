@@ -1,28 +1,28 @@
-#include <WiFi.h>
-
-#include <arduinoFFT.h>
-#include <SPIFFS.h>
-
-#include <TFT_eSPI.h>
-#include <SPI.h>
-
-#include <OneWire.h>
-#include <DallasTemperature.h>
-
-#include <time.h>
-
 // pin & network configuration
 #include "config.h"
 
+//esp32 includes
+#include <WiFi.h>
+#include <SPIFFS.h>
+#include <time.h>
+
+//screen includes
+#include <TFT_eSPI.h>
+#include <SPI.h>
+
+//temp sensor includes
+#include <OneWire.h>
+#include <DallasTemperature.h>
+
+#include <arduinoFFT.h>
+
 // Setup a oneWire instance to communicate with any OneWire devices
 OneWire oneWire(TEMP_SENSOR_PIN);
-
 // Pass our oneWire reference to Dallas Temperature sensor 
 DallasTemperature tempSensors(&oneWire);
 
 
 TFT_eSPI tft = TFT_eSPI();  // Invoke library, pins defined in User_Setup.h
-
   
 arduinoFFT FFT = arduinoFFT();
 
@@ -83,6 +83,7 @@ void setup() {
   }
 
   memset(&measurement, 0, sizeof(measurement));
+  
   tft.init();
   tft.setRotation(0);
   Serial.println("# tft initialized");
@@ -135,7 +136,6 @@ void setup() {
   sync_time();
   tempSensors.requestTemperatures();
   measurement.outside_temperature_C = tempSensors.getTempCByIndex(0);
-
   Serial.println("setup finished"); 
 }
 
